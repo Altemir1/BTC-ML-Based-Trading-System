@@ -1,1 +1,1 @@
-# ETH-LSTM-based-trading-system
+# LSTM-based-Trading-System-with-Technical-Indicators
