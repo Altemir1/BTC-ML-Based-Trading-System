@@ -1,5 +1,5 @@
-# BTC-ML-Based-Trading-System
-Welcome to the repository of trading system that is based on machine learning approach. Here you will find notebooks for such neural network as LSTM and machine learning model XGBoost
+# BTC-price-direction-prediction
+Welcome to the repository for BTC prediction of price direction. Here you will find notebooks with experiments on Long short term memory neural network and machine learning model XGBoost
 trained on datasets with different transformations before fitting.
 
 ## Features
@@ -43,4 +43,56 @@ The following features are included in this repository, along with the details o
 
 **LSTM Architecture**
 ![model](https://github.com/user-attachments/assets/a5cc6246-8ab8-47ec-bbd3-f475a2bbc4fb)
+
+Parameters that was used to find best model:
+```
+window_sizes = list(range(10, 101, 10))
+batch_sizes = [64, 128]
+```
+**XGBOOST**
+
+Paramters used in the grid search for the best model:
+```
+param_grid = {
+      'max_depth': [3, 5, 7],
+      'learning_rate': [0.01, 0.1, 0.2],
+      'n_estimators': [100, 200, 300],
+      'subsample': [0.8, 1.0]
+  }
+```
+
+## Dataset transformation
+Training of the models was done in using these 4 transformation:
+
+1) Log transformation
+2) Log transformation with normalization
+3) Min max normalization
+4) Standard scaling
+
+
+## Results
+
+**LSTM models**
+
+| Transformation | Window Size | Batch Size | Test Accuracy |
+|:---------------|:------------|:-----------|:--------------|
+| Log |   100     | 128      | 52.5%   |
+| Log-Norm  |20| 64    | 53.5%    |
+| MinMax Norm| 20  | 128         | 53.5%         |
+| Standard scale|20| 128| 54.8%|
+
+**XGboost models**
+| Transformation | Test Accuracy |
+|:---------------|:--------------|
+| Log | 52%   |
+| Log-Norm  |52%|
+| MinMax Norm| 51%|
+| Standard scale| 51%|
+
+## Conclusion
+Between these two models better results was on LSTM model with accuracy of 54.8%,  2-3 percent better than xgboost model. However it's still not enough to use this model in trading strategies. 
+From parameters in the lsmt models the window size in 20 ticks showed best performance in most of transformed datasets. In our case one tick is 1 day.
+
+
+
 
