@@ -30,7 +30,7 @@ The following features are included in this repository, along with the details o
 - `donchian_upper` – Channel: Upper boundary of the Donchian channel.
 - `donchian_lower` – Channel: Lower boundary of the Donchian channel.
   
-**Additional Market Data **(sourced using the yfinance library)
+**Additional Market Data**(sourced using the yfinance library)
 - `treasury_bond` – Market Indicator: Treasury bond yields used to assess economic conditions and risk-off sentiment.
 - `dollar_index` – Market Indicator: U.S. Dollar Index, representing the strength of the dollar against a basket of major currencies.
 - `gold` – Commodity: Price of gold, used as a safe-haven asset indicator.
